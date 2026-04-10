@@ -2,10 +2,10 @@ import cv2
 from ultralytics import YOLO
 
 # 1. Path to your trained model
-MODEL_PATH = r"C:\Users\asus\runs\detect\runs_ppe\ppe_yolov8n\weights\best.pt"
+MODEL_PATH = r"best.pt"
 
 # 2. Path to the image or video you want to test (Use 'r' before the string to ignore backslashes)
-TEST_FILE = r"D:\PPE\dataset\ppe-kit-in-construction-heavyequipmentcollegesof-america-scaled-1.jpg"
+TEST_FILE = r"image.png"
 
 print("Loading model...")
 model = YOLO(MODEL_PATH)
