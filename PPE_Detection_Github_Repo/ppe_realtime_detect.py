@@ -18,10 +18,11 @@ from ultralytics import YOLO
 # ──────────────────────────────────────────────
 # Configuration
 # ──────────────────────────────────────────────
-MODEL_PATH = r"best.pt"  # Place your best.pt file in this identical folder to run!
+MODEL_PATH = r"C:\Users\asus\Downloads\ppe_t4_run_complete\weights\best.pt"
 CONFIDENCE_THRESHOLD = 0.40
-WEBCAM_INDEX = 0  # Change to 1 if you have multiple cameras
-
+# To use a webcam, set this to 0. 
+# To use a video file instead, set this to the file name! (e.g., "my_video.mp4")
+VIDEO_SOURCE = r"C:\Users\asus\Videos\vlc-record-2026-04-10-19h37m33s-YTDown.com_YouTube_Free-PPE-Safety-Video-for-Construction-W_Media_LL1e55Dnd_g_002_720p.mp4-.mp4"
 # Class names and their display colors (BGR)
 CLASS_COLORS = {
     "glove":  (0, 200, 100),   # green
@@ -119,8 +120,8 @@ def main():
     class_names = model.names  # {0: 'glove', 1: 'helmet', 2: 'pants', 3: 'vest'}
     print(f"Model loaded. Classes: {class_names}")
     
-    print(f"Opening webcam (index={WEBCAM_INDEX})...")
-    cap = cv2.VideoCapture(WEBCAM_INDEX)
+    print(f"Opening video feed (source={VIDEO_SOURCE})...")
+    cap = cv2.VideoCapture(VIDEO_SOURCE)
     
     if not cap.isOpened():
         print("ERROR: Could not open webcam. Check your camera connection.")
